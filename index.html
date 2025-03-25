@@ -7,10 +7,53 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="app">
-        <h1>Família Ágil</h1>
-        <p>Carregando...</p>
+    <div id="loginScreen">
+        <h2>Login</h2>
+        <input type="email" id="email" placeholder="Digite seu e-mail">
+        <input type="password" id="password" placeholder="Digite sua senha">
+        <button onclick="login()">Entrar</button>
     </div>
-    <script src="index.js"></script>
+
+    <div id="app" style="display: none;">
+        <h1>Família Ágil</h1>
+        <nav>
+            <button onclick="showPage('calendar')">Calendário</button>
+            <button onclick="showPage('tasks')">Tarefas</button>
+            <button onclick="showPage('scrum')">Scrum</button>
+        </nav>
+
+        <div id="calendar" class="page">
+            <h2>Calendário Familiar</h2>
+            <div id="calendarBox"></div>
+        </div>
+
+        <div id="tasks" class="page">
+            <h2>Tarefas e Responsáveis</h2>
+            <ul id="taskList"></ul>
+            <input type="text" id="newTask" placeholder="Nova tarefa">
+            <button onclick="addTask()">Adicionar</button>
+        </div>
+
+        <div id="scrum" class="page">
+            <h2>Scrum para Pais</h2>
+            <div class="scrum-board">
+                <div class="scrum-column">
+                    <h3>A Fazer</h3>
+                    <ul id="todoList"></ul>
+                </div>
+                <div class="scrum-column">
+                    <h3>Em Progresso</h3>
+                    <ul id="doingList"></ul>
+                </div>
+                <div class="scrum-column">
+                    <h3>Concluído</h3>
+                    <ul id="doneList"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
